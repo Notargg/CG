@@ -56,17 +56,22 @@ int main(int argc, char ** argv) {
   // initialize the next term (3rd term)
    int nextTerm = t1 + t2;
 
-  
+   i = 0;
+   n = i;
   obj1 = TransObj(obj1,SetSftMatrix(-5.0,0.0)); // desloca o polígono 5 unidades para a esquerda da origem
   while (1) {
     cx = GetXVertex(Centroide(obj1));
     cy = GetYVertex(Centroide(obj1));
-    if ((cx < -5.0) || (cx > 5.0))  { // pensando na janela definida...
+    if ((cx > 5.0 + i) || (cx < -5.0 + i))  { // pensando na janela definida...
        deslocamento_x = - deslocamento_x;
        angulo = - angulo;
+       //i++;
        }  
-    if ((cy < -5.0) || (cy > 5.0))  { // pensando na janela definida...
+
+
+    if ((cy < -5.0 + i) || (cy > 5.0) + i)  { // pensando na janela definida...
        deslocamento_y = - deslocamento_y;
+       //i = 2;
        }
 
    // Fibo
@@ -75,10 +80,30 @@ int main(int argc, char ** argv) {
     t2 = nextTerm;
     nextTerm = t1 + t2;
 
-   // Dividir em Quadrantes
 
 
+   // Dividir em Quadrantes - 1/2/3/4
 
+   /*
+   
+   if((cx >= 0) && (cy >= 0)){
+
+   }
+
+   if((cx <= 0) && (cy >= 0)){
+
+   }
+
+   if((cx <= 0) && (cy <= 0)){
+
+   }
+
+   if((cx >= 0) && (cy <= 0 )){
+
+   }
+
+   */
+   
     // As transformações (lineares) sobre objetos ocorrem no SRU
     obj1 = TransObj(obj1,SetSftMatrix(-cx,-cy));
     obj1 = TransObj(obj1,SetRotMatrix(-angulo));         
