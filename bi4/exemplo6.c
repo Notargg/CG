@@ -58,11 +58,20 @@ int main(int argc, char ** argv) {
 
    i = 0;
    n = i;
-  obj1 = TransObj(obj1,SetSftMatrix(-5.0,0.0)); // desloca o polígono 5 unidades para a esquerda da origem
+   int movimentos = 0;
+   char opcao = 'a';
+
+  obj1 = TransObj(obj1,SetSftMatrix(-1.0,0.0)); // desloca o polígono 5 unidades para a esquerda da origem
   while (1) {
-    cx = GetXVertex(Centroide(obj1));
+   opcao = getchar();
+   if(opcao != 'a'){
+      cx = GetXVertex(Centroide(obj1));
     cy = GetYVertex(Centroide(obj1));
-    if ((cx > 5.0 + i) || (cx < -5.0 + i))  { // pensando na janela definida...
+
+    movimentos = movimentos % 4;
+
+      /*
+      if ((cx > 5.deslocamento_y + 0 + i) || (cx < -5.0 + i))  { // pensando na janela definida...
        deslocamento_x = - deslocamento_x;
        angulo = - angulo;
        //i++;
@@ -73,6 +82,10 @@ int main(int argc, char ** argv) {
        deslocamento_y = - deslocamento_y;
        //i = 2;
        }
+      
+      
+      */
+
 
    // Fibo
 
@@ -109,12 +122,42 @@ int main(int argc, char ** argv) {
     obj1 = TransObj(obj1,SetRotMatrix(-angulo));         
     obj1 = TransObj(obj1,SetSftMatrix(cx,cy));
     //obj1 = TransObj(obj1,SetSftMatrix(0.00001 * t1,0.00001 * t1));
-   obj1 = TransObj(obj1,SetSftMatrix(deslocamento_x,deslocamento_y));
+
+      switch (movimentos) {
+      case 1:
+         deslocamento_y = t1 * 0.1;
+         printf("%d 1qweqw\n", movimentos);
+         obj1 = TransObj(obj1,SetSftMatrix(0,deslocamento_y));
+      break;
+      case 2:
+         deslocamento_x = t1 * 0.1;
+      printf("%d dasda \n", movimentos);
+         obj1 = TransObj(obj1,SetSftMatrix(deslocamento_x,0));
+
+      break;
+      case 3:
+         deslocamento_y = -t1 * 0.1;
+      printf("%d eqffas \n", movimentos);
+         obj1 = TransObj(obj1,SetSftMatrix(0,deslocamento_y));
+
+      break;  
+      case 4:
+       deslocamento_x = -t1 * 0.1;
+      printf("%d ewq eqw \n", movimentos);
+      obj1 = TransObj(obj1,SetSftMatrix(deslocamento_x,0));
+       
+      break;
+      }
+
+
     ClearDevice(porta,monitor); // Limpa o SRD na view-port especificada
     DrawObject(obj1,janela,porta,monitor,1); // Desenha o objeto no SRD
     Fill(obj1,(cor%3)+1,janela,porta,monitor); // O prenchimento de um objeto ocorre no SRD
     RefreshX(monitor,palheta); // Mapeia o SRD no monitor virtual exibindo o objeto na tela
     cor++; // Muda a cor do objeto
+    movimentos++;
+   }
+    
     }
 
   return 0;
