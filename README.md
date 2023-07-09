@@ -1,14 +1,32 @@
 # CG
- Aulas de CG - Minhas mudanças
 
- Esse Gith foi feito para a disciplina de Computação Gráfica ministrada no semestre 2023/1 pelo professor Murilo Homem.
- Sendo essa realizada pela Universidade Federal de São Carlos
+Esse repositório foi feito pelo aluno Gabriel Graton na matéria de Computação Gráfica ofertada no período de 2023/01 
+pelo professor Murilo Homem do Departamento de Computação da UFScar.
 
- Aqui temos as primeiras bibliotecas divididas
-    - bi1
-    - bi2
-    - bi3
-    - bi4
+# Resumo
 
- Há a prova também na pasta prova, onde contém as mudanças
-    - Prova
+## bi1
+
+Aqui estruturamos o começo da ideia de desenhar no monitor onde temos os conceitos SRU e SRD. Vemos principalmente
+sistema de coordendas
+
+## bi2
+
+Estruturação dos conceitos da primeira aula com foco em operações de mudança
+
+## bi3
+
+Mistura de operações de mudança, executando várias ao mesmo tempo
+
+## bi4
+
+Aqui temos o exercício pedido pelo professor de aumentar e diminuir se passar da origem.
+Além da tentativa de simplesmente fazer um fibonacci. Tentativa falha.
+
+## Prova
+
+Aqui temos a Prova Prática realizada no dia 06/07/2023.
+
+## Desempenho Atividades Avaliativas
+
+ 
