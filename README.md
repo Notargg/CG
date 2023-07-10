@@ -29,4 +29,6 @@ Aqui temos a Prova Prática realizada no dia 06/07/2023.
 
 ## Desempenho Atividades Avaliativas
 
+Prova avaliativa - No geral, só uma diferença que é no dy = y2 -y1 ( Nota esperada - 9/10 ou 9,5/10)
+
  
