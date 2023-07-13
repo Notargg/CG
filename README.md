@@ -3,6 +3,8 @@
 Esse repositório foi feito pelo aluno Gabriel Graton na matéria de Computação Gráfica ofertada no período de 2023/01 
 pelo professor Murilo Homem do Departamento de Computação da UFScar.
 
+Compilados na versão gcc 11.3.0
+
 # Resumo
 
 ## bi1
@@ -22,6 +24,22 @@ Mistura de operações de mudança, executando várias ao mesmo tempo
 
 Aqui temos o exercício pedido pelo professor de aumentar e diminuir se passar da origem.
 Além da tentativa de simplesmente fazer um fibonacci. Tentativa falha.
+
+## bi3D1
+
+Para compilar rode os seguintes comandos:
+
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+- sudo apt update
+- sudo apt install gcc-9
+
+Depois os códigos
+
+- sudo apt install software-properties-common
+- sudo apt install g++-9
+
+Por fim, certifique que o arquivo MakeFile esteja com o comando gcc-9
+
 
 ## Prova
 
