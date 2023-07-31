@@ -4,4 +4,5 @@ all:
 	gcc exemplo6.c -o exemplo6 cg2d.o -lm -lX11
 	gcc exemplo7.c -o exemplo7 cg2d.o -lm -lX11
 	gcc exemplo8.c -o exemplo8 cg2d.o -lm -lX11
+	gcc atividade.c -o atividade cg2d.o -lm -lX11
 	
