@@ -5,6 +5,7 @@
 // Para executar em um shell linux digite: make && ./exemplo6
 
 #include "cg2d.h"
+#include <math.h>
 
 int main(int argc, char ** argv) {
   
@@ -63,6 +64,7 @@ int main(int argc, char ** argv) {
 
    float centrox = 0;
    float centroy = 0;
+   double media = 0;
 
 
 
@@ -73,7 +75,6 @@ int main(int argc, char ** argv) {
       cx = GetXVertex(Centroide(obj1));
       cy = GetYVertex(Centroide(obj1));
 
-      movimentos = movimentos % 8;
       float escalar = 1.0;
 
       switch (movimentos) {
@@ -85,12 +86,19 @@ int main(int argc, char ** argv) {
       centroy = cy;
 
       printf("Termo do Fibonacci: %d \n", t2);
+      printf("Passou daqui -2 \n");
+      printf("Movimentos: %d \n", movimentos);
+
+      deslocamento_y = sqrt( t2*t2 - pow(t2 - centrox,2)) + centroy;
+         media = deslocamento_y / t2;
+
+
 
       for(i=0;i <= t2;i++){
          //(x - xc)2 + (y – yc)2 = R2
+         obj1 = TransObj(obj1,SetSftMatrix(i,media));
          
-         deslocamento_y = sqrt( t2*t2 - (i - cemtrox)**2) + centroy;
-         obj1 = TransObj(obj1,SetSftMatrix(i,deslocamento_y));
+       
       }
 
       // Fibonacci após para o próximo termo
@@ -98,6 +106,7 @@ int main(int argc, char ** argv) {
       t1 = t2;
       t2 = nextTerm;
       nextTerm = t1 + t2;
+      movimentos = movimentos + 2;
        
       break;
 
@@ -111,14 +120,51 @@ int main(int argc, char ** argv) {
 
       centrox = cx;
       centroy = cy - (t2-t1);
+      
+      deslocamento_y = sqrt( t2*t2 - pow(t2 - centrox,2)) + centroy;
+         media = deslocamento_y / t2;
 
-      printf("Termo do Fibonacci: %d \n", t2;
+      printf("Termo do Fibonacci: %d \n", t2);
+      printf("Passou daqui 0 \n");
+      printf("Movimentos: %d \n", movimentos);
+
+      for(i=0;i <= t2;i++){
+         //(x - xc)2 + (y – yc)2 = R2
+
+         printf("Deslocamento x: %d \n", i);
+         printf("Deslocamento y: %lf \n", media);
+
+         obj1 = TransObj(obj1,SetSftMatrix(i,-media));
+      }
+
+      printf("Incrementos!! \n");
+
+      // Fibonacci após para o próximo termo
+
+      t1 = t2;
+      t2 = nextTerm;
+      nextTerm = t1 + t2;
+      movimentos = movimentos + 2;
+       
+      break;
+      case 2:
+
+      centrox = cx  - (t2-t1);
+      centroy = cy ;
+
+      //deslocamento_y = sqrt( t2*t2 - pow(t2 - centrox,2)) + centroy;
+      media = deslocamento_y / t2;
+
+      printf("Termo do Fibonacci: %d \n", t2);
+      printf("Passou daqui 2 \n");
+      printf("Movimentos: %d \n", movimentos);
 
       for(i=0;i <= t2;i++){
          //(x - xc)2 + (y – yc)2 = R2
          
-         deslocamento_y = sqrt( t2*t2 - (i - cemtrox)**2) + centroy;
-         obj1 = TransObj(obj1,SetSftMatrix(i,deslocamento_y));
+
+
+         obj1 = TransObj(obj1,SetSftMatrix(-i,-media));
       }
 
       // Fibonacci após para o próximo termo
@@ -126,48 +172,73 @@ int main(int argc, char ** argv) {
       t1 = t2;
       t2 = nextTerm;
       nextTerm = t1 + t2;
-       
-      break;
-      case 2:
-         t1 = t2;
-      t2 = nextTerm;
-      nextTerm = t1 + t2;
-         deslocamento_y = t1 * escalar;
-         printf("Termo do Fibonacci: %d \n", t1);
-         printf("%d 1qweqw\n", movimentos);
-      for(i=0;i >= -t1;i--){
-         obj1 = TransObj(obj1,SetSftMatrix(0,1));
-      }
-   
+      movimentos = movimentos + 2;
+
+
       break;
       case 4:
+
+      centrox = cx ;
+      centroy = cy + (t2-t1);
+
+      printf("Termo do Fibonacci: %d \n", t2);
+      printf("Passou daqui 4\n");
+      printf("Movimentos: %d \n", movimentos);
+
+      deslocamento_y = sqrt( t2*t2 - pow(t2 - centrox,2)) + centroy;
+      media = deslocamento_y / t2;
+
+     
+
+      for(i=0;i <= t2;i++){
+         //(x - xc)2 + (y – yc)2 = R2
+         
+
+
+         obj1 = TransObj(obj1,SetSftMatrix(-i,media));
+      }
+
+      // Fibonacci após para o próximo termo
+
       t1 = t2;
       t2 = nextTerm;
       nextTerm = t1 + t2;
-         deslocamento_x = t1 * escalar;
-         printf("Termo do Fibonacci: %d \n", t1);
-      printf("%d dasda \n", movimentos);
-      for(i=0;i >= -t1;i--){
-         obj1 = TransObj(obj1,SetSftMatrix(1,0));
-      }
-        
+      movimentos = movimentos + 2;
 
       break;
       case 6:
+
+      centrox = cx + (t2-t1);
+      centroy = cy ;
+
+      printf("Termo do Fibonacci: %d \n", t2);
+      printf("Passou daqui 6 \n");
+      printf("Movimentos: %d \n", movimentos);
+
+      deslocamento_y = sqrt( t2*t2 - pow(t2 - centrox,2)) + centroy;
+         media = deslocamento_y / t2;
+
+      for(i=0;i <= t2;i++){
+         //(x - xc)2 + (y – yc)2 = R2
+         
+
+
+         obj1 = TransObj(obj1,SetSftMatrix(i,media));
+      }
+
+      // Fibonacci após para o próximo termo
+
       t1 = t2;
       t2 = nextTerm;
       nextTerm = t1 + t2;
-         deslocamento_y = -t1 * escalar;
-         printf("Termo do Fibonacci: %d \n", t1);
-      printf("%d eqffas \n", movimentos);
-      for(i=0;i >= -t1;i--){
-         obj1 = TransObj(obj1,SetSftMatrix(0,-1));
-      }
+      movimentos = movimentos + 2;
+      
       
 
       break;  
       
-      movimentos = movimentos + 1;
+      movimentos = movimentos % 8;
+      printf("Movimentos: %d \n", movimentos);
    
 
       }
