@@ -1,0 +1,16 @@
+
+No terminal, execute o comando
+
+	gcc atividade3.c -o atividade3 cg2d.o cg3d.o -lm -lX11
+	
+para compilar e estudar o código atividade3.c.
+
+Após entender o contexto do código passe para as questões abaixo.
+
+Questões:
+
+1) Modifique o código apresentado de maneira que na view-port 3 seja apresentada a construção simultânea (equivalente ao apresentado na view-port 2) de uma superfície de revolução em que o eixo de revolução está rotacionado 45º no sentido anti-horário (ainda pertencendo ao plano xy).
+
+2) Modifique o código para que na view-port 6 seja visualizada a construção simultânea de um sólido geométrico (representado por um modelo de arame) no qual a geratriz esteja rotacionada 45º no sentido horário. Utilize um polígono regular com 5 lados e 20 unidades de comprimento (faça as transformações rígidas que achar necessário para manter a visualização coerente com a janela dada) e garanta que a reta geratriz seja normal ao polígono.
+
+
