@@ -25,7 +25,7 @@ Mistura de operações de mudança, executando várias ao mesmo tempo
 Aqui temos o exercício pedido pelo professor de aumentar e diminuir se passar da origem.
 Além da tentativa de simplesmente fazer um fibonacci. Tentativa falha.
 
-## bi3D1
+## bi3D1 / bi3D1.1
 
 Para compilar rode os seguintes comandos:
 
@@ -40,13 +40,21 @@ Depois os códigos
 
 Por fim, certifique que o arquivo MakeFile esteja com o comando gcc-9
 
+## bi3D2
+
+Segunda Versão da Biblioteca 3D, onde há algoritmos para retirar superficies ocultas
 
 ## Prova
 
 Aqui temos a Prova Prática realizada no dia 06/07/2023.
+Aqui temos a Prova Prática realizada no dia 20/07/2023.
+Aqui temos a Prova Prática realizada no dia 10/08/2023.
 
 ## Desempenho Atividades Avaliativas
 
-Prova avaliativa - No geral, só uma diferença que é no dy = y2 -y1 ( Nota esperada - 9/10 ou 9,5/10)
+Prova avaliativa1 - 
+Prova avaliativa2 -
+Prova avaliativa3 -
+Prova avaliativa4 - 
 
  
