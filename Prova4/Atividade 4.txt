@@ -1,0 +1,22 @@
+ 
+Estudo do algoritmo do pintor (prioridade das faces a serem preenchidas) -> método elementar para preenchimento das faces de um objeto.
+
+Sem o uso de um algoritmo de eliminação de superfícies ocultas (ESO), a visualização em modelo de arame do prisma de base triangular é ambigua.
+
+Um algoritmo para ESO muito eficiente e implementado na biblioteca atual é baseado em uma abordagem feita exclusivamente no SRU e verifica a direção e sentido dos vetores normais às faces do objetos.
+
+Quando não é possível determinar os vetores normais às faces, o que acontece no caso do exemplo do "bule de chá", podemos utilizar uma abordagem implementada diretamente do SRD, chamada de z-buffer, e com resultados similares ao modelo onde os vetores normais são conhecidos. A implementação do z-buffer foi deixada para os interessados.
+
+Contudo, uma abordagem elementar, chamada algoritmo do pintor, pode ser utilizada em casos particulares, com o conhecimento do usuário sobre a posição do objeto. Veja os slides apresentados em sala de aula sobre os algoritmos de eliminação de superfícies ocultas!
+ 
+EXERCÍCIOS:
+ 
+Considerando os dados do prisma de base triangular apresentados para esta atividade e uma abordagem para o agoritmo do pintor, execute o código e faça:
+ 
+ 1) Sem nenhuma operação de rotação (uso das opções "d" e "p"), verifique se a ordem definida previamente na "lista ordem" está correta, justificando.
+ 
+ 2) Faça 16 rotações em torno do eixo x, 13 rotações em torno do eixo y e 17 rotações em torno do eixo z. Após a sequencia de rotações, determine o novo vetor de prioridade das faces para que o objeto seja visualizado corretamente.
+ 
+ 3) Discuta os problemas que podem aparecer com o uso dessa técnica, mesmo que não apareçam no caso do exemplo estudado.
+ 
+ 
