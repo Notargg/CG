@@ -44,11 +44,16 @@ Por fim, certifique que o arquivo MakeFile esteja com o comando gcc-9
 
 Segunda Versão da Biblioteca 3D, onde há algoritmos para retirar superficies ocultas
 
+## bi3D3
+
+Segunda Versão da Biblioteca 3D, onde há algoritmos para demonstrar os fenomenos de iluminação
+
 ## Prova
 
 Aqui temos a Prova Prática realizada no dia 06/07/2023.
 Aqui temos a Prova Prática realizada no dia 20/07/2023.
 Aqui temos a Prova Prática realizada no dia 10/08/2023.
+Aqui temos a Prova Prática realizada no dia 31/08/2023.
 
 ## Desempenho Atividades Avaliativas
 
