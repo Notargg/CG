@@ -1,0 +1,32 @@
+
+Leia atentamente essas instruções antes de executar e entender o resultado do código apresentado.
+
+O objeto de teste, construído inicialmente com 2 faces triangulares e 3 faces retangulares, foi reconstruído subdividindo cada uma das faces retangulares em quatro faces triangulares. Essa abordagem frequentemente é a mais usual na prática (ex: OpenGL).
+
+Para melhor entender os efeitos do sombreamento os algoritmos são aplicados utilizando uma palheta de 256 níveis de tons de cinza (diferentemente do que foi feito até o momento onde trabalhamos com cores "sólidas").
+
+O arquivo fonte prisma6.c apresenta o uso de dois modelos de sombreamento (implementados no arquivo cg3d.c) e que são aplicados sobre o objeto de teste (prisma de base triangular). O primeiro é o algoritmo de sombreamento conhecido como "flat shading" e o segundo é baseado no modelo de Gouraud. O primeiro é conhecido na literatura muitas vezes pelo nome de "Gouraud facetado" e o segundo de "Gouraud suavizado". O Gouraud facetado é o modelo mais simples e é baseado na componente de luz refletida considerando que o vetor normal em cada vértice de uma face é exatamente o vetor normal da própria face. Assim, todos os cálculos das componentes de luzes refletidas são baseados em um único vetor. Por outro lado, como apresentado em sala, no modelo de Gouraud (Gouraud suavizado), consideramos que a normal em cada vértice que compõe uma face é estimada como sendo a média aritmética dos vetores normais a cada face adjacente que contém o vértice. Dessa forma, para uma face triangular, temos três vetores normais aos vértices que são diferentes do vetor normal da face (pelo menos, deveriam ser!). 
+
+Após a interpolação dos vetores normais aos vértices, as entradas no interior do polígono são "pintadas" utilizando técnicas de interpolação considerando as intensidades calculadas nos vértices. A técnica implementada para a interpolação de faces triangulares, muito utilizada em CG, foi a interpolação baseada em componentes baricêntricas.
+
+Essa abordagem produz um efeito colateral indesejado quando um dos vetores estimados é igual ou bem próximo do vetor normal da face. No caso das faces planas que foram subdivididas em quatro triângulos, o ponto central da face, compartilhado por quatro triângulos, será muito próximo do vetor normal a própria face retangular, resultando em um elemento visual mais intenso do que o desejado. Ao executar o código prisma6.c com o algoritmo de sombreamento de Gouraud, vocês verão esse efeito indesejado. Esse efeito é tratado (minimizado) com melhores técnicas de estimação dos vetores normais aos pontos, mas isso não foi implementado nesse código. Contudo, percebe-se a variação de luz e sombra de maneira bem interessante.
+
+Faça testes compilando o código para o sombreamento facetado (flat shading) tirando o comentário das linhas indicadas e compare com os resultados gerados pelo Gouraud suavizado.
+
+Pode-se verificar que o modelo de Gouraud suavizado é superior ao flat shading (a menos do efeito colateral mencionado, que pode ser tratado).
+
+Considerando o tamanho das faces, os modelos de sombreamento apresentam apenas as componentes de luz ambiente e reflexão de luz difusa. Os indexes de reflexão para cada uma delas são passados pela função SetIndexes(), com dois parâmetros apenas. Faça testes mudando esses parâmetros (lembre-se que a soma deles deve ser 1). A componente especular foi negligenciada neste exemplo pois começa a fazer sentido quando as faces tentem a ter áreas bem pequenas, o que não é o caso do objeto que estamos utilizando nos testes.
+
+Sugestões de aperfeiçoamento e de implementações para os interessados:
+
+1) algoritmo de preenchimento baseado na técnica scan-line (o algoritmo implementado não foi passado para vocês!);
+
+2) implementação da técnica do z-buffer. Essa abordagem é bem simples e permite preencher faces sem o conhecimento dos vetores normais a cada uma das faces. No caso do prisma, não utilizamos o z-buffer pois conhecemos os vetores normais (ou podem ser determinados) mas no caso de outros objetos, como o "bule de chá", somente será possível preencher as faces com o uso do z-buffer (esse algoritmo também não foi passado, sendo deixado como exercício);
+
+3) o z-buffer também pode ser utilizado na modelagem de sombreamento pois pode verificar regiões que "não são vistas pela luz";
+
+4) implementação da abordagem de Phong, que produz resultados superiores ao modelo de Gouraud.
+
+Por fim, duas funções são apresentadas no aquivo cd3d.c para conversões entre cores no sistema RGB e HSV. Não são apresentados exemplos, mas não há dificuldade no uso dessas funções. Recomenda-se que testem algumas mudanças de cores entre os sistemas para analisar o comportamento das funções e potenciais usos.
+
+ 
