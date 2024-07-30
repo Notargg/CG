@@ -48,18 +48,28 @@ Segunda Versão da Biblioteca 3D, onde há algoritmos para retirar superficies o
 
 Segunda Versão da Biblioteca 3D, onde há algoritmos para demonstrar os fenomenos de iluminação
 
+## b14.1
+
+Terceira Versão da Biblioteca 3D, para a prova
+
+## b14 
+
+Versão minha para a confecção do Fibonacci
+
 ## Prova
 
-Aqui temos a Prova Prática realizada no dia 06/07/2023.
-Aqui temos a Prova Prática realizada no dia 20/07/2023.
-Aqui temos a Prova Prática realizada no dia 10/08/2023.
-Aqui temos a Prova Prática realizada no dia 31/08/2023.
+- Aqui temos a Prova Prática realizada no dia 06/07/2023.
+- Aqui temos a Prova Prática realizada no dia 20/07/2023.
+- Aqui temos a Prova Prática realizada no dia 10/08/2023.
+- Aqui temos a Prova Prática realizada no dia 31/08/2023.
 
 ## Desempenho Atividades Avaliativas
 
-Prova avaliativa1 - 
-Prova avaliativa2 -
-Prova avaliativa3 -
-Prova avaliativa4 - 
+- Prova avaliativa1 - 10.0
+- Prova avaliativa2 - 10.0
+- Prova avaliativa3 - 10.0
+- Prova avaliativa4 - 10.0
+- Lista - 10.0
+- Lista - 10.0
 
  
